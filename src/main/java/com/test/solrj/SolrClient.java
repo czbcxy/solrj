@@ -31,8 +31,8 @@ public class SolrClient {
 
         SolrInputDocument doc = new SolrInputDocument();
 
-        doc.addField("id", "this is id");
-        doc.addField("title", "this is document");
+        doc.addField("id", "id");
+        doc.addField("title", "document");
 
         try {
             UpdateResponse response = server.add(doc);
@@ -59,6 +59,9 @@ public class SolrClient {
 
         solrQuery.set("rows",10);
 
+//        solrQuery.set("q","id:carver");
+//        solrQuery.set("fq","id:carver");
+//        solrQuery.set("sort","id:*");
         try {
             QueryResponse response = null;
             response = server.query(solrQuery);
@@ -77,8 +80,8 @@ public class SolrClient {
 
         SolrInputDocument doc = new SolrInputDocument();
 
-        doc.addField("id", "carver");
-        doc.addField("title", "java cainiao");
+        doc.addField("id", "czb");
+        doc.addField("title", "java think ");
 
         try {
             UpdateResponse add = server.add(doc);
@@ -94,5 +97,8 @@ public class SolrClient {
         }
 
     }
+
+
+
 
 }
